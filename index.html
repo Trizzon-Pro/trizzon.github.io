@@ -3,56 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trizzon | Lançamento Cowork</title>
-  <meta name="description" content="Trizzon, produtos profissionais para salões de beleza. Conheça o Cowork, nosso primeiro lançamento.">
+  <title>Trizzon Professional | Tratamento líquido reconstrutor</title>
+  <meta name="description" content="Tratamento líquido reconstrutor Trizzon Professional. Máscara líquida e leave-in com proteção térmica em um só spray. Em breve.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/trizzon-favicon.svg">
   <style>
+    @font-face{font-family:"Jost";src:url("assets/fonts/Jost-Variable.ttf") format("truetype");font-weight:100 900;font-display:swap}
+    @font-face{font-family:"Archivo Narrow";src:url("assets/fonts/ArchivoNarrow-Variable.ttf") format("truetype");font-weight:400 700;font-display:swap}
     :root{
-      --bg:#0f0d11; --bg2:#17141a; --card:#1d1921; --text:#f4f0f5; --muted:#b4abb9;
-      --accent:#e0457b; --accent2:#f5b25c; --line:#2c2631;
+      --tz-preto:#14110F;
+      --tz-marfim:#F4EEE6;
+      --tz-champagne:#C9A876;
+      --tz-cinza:#8C8378;
+      --tz-texto-secundario:#625A51;
+      --tz-fonte:"Jost","Futura","Century Gothic",sans-serif;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    body{font-family:var(--tz-fonte);font-weight:400;background:var(--tz-marfim);color:var(--tz-preto);line-height:1.65;-webkit-font-smoothing:antialiased}
+    img{display:block;max-width:100%;height:auto}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:10;background:rgba(15,13,17,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-    header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .logo{font-weight:800;letter-spacing:.18em;font-size:1.15rem}
-    .logo span{color:var(--accent)}
-    nav a{margin-left:22px;color:var(--muted);font-size:.95rem}
-    nav a:hover{color:var(--text)}
-    .btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:700;background:linear-gradient(135deg,var(--accent),#c02f66);color:#fff;border:0;cursor:pointer;font-size:1rem;transition:transform .15s,box-shadow .15s}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(224,69,123,.35)}
-    .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
-    .btn.ghost:hover{box-shadow:none;border-color:var(--accent)}
-    .hero{padding:96px 0 80px;text-align:center;background:radial-gradient(ellipse at top,rgba(224,69,123,.18),transparent 60%)}
-    .tag{display:inline-block;padding:6px 16px;border:1px solid var(--accent);color:var(--accent);border-radius:999px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}
-    h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1;margin-bottom:20px}
-    h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero p{color:var(--muted);max-width:620px;margin:0 auto 36px;font-size:1.1rem}
-    .hero .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-    section{padding:80px 0}
-    section.alt{background:var(--bg2)}
-    h2{font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:14px}
-    .lead{color:var(--muted);max-width:640px;margin-bottom:40px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
-    .card .ico{font-size:1.8rem;margin-bottom:12px}
-    .card h3{margin-bottom:8px;font-size:1.1rem}
-    .card p{color:var(--muted);font-size:.95rem}
-    .product{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    .shot{aspect-ratio:1;border-radius:24px;background:linear-gradient(145deg,rgba(224,69,123,.25),rgba(245,178,92,.15)),var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--muted);text-align:center;padding:20px}
-    .list{list-style:none;margin:22px 0 30px}
-    .list li{padding:8px 0 8px 30px;position:relative;color:var(--muted)}
-    .list li::before{content:"✓";position:absolute;left:0;color:var(--accent2);font-weight:700}
-    .cta{text-align:center;background:radial-gradient(ellipse at center,rgba(224,69,123,.2),transparent 65%)}
-    .cta p{color:var(--muted);margin-bottom:30px}
-    footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.9rem;text-align:center}
-    @media(max-width:760px){
-      nav{display:none}
-      .product{grid-template-columns:1fr}
-      .hero{padding:64px 0 56px}
-      section{padding:56px 0}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 8%}
+    @media(min-width:1200px){.wrap{padding:0 40px}}
+
+    /* títulos e rótulos */
+    .eyebrow{font-weight:500;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--tz-texto-secundario);margin-bottom:28px}
+    .dark .eyebrow{color:var(--tz-champagne)}
+    h1,h2{font-weight:500;line-height:1.15}
+    h1{font-size:clamp(2.2rem,5.4vw,3.8rem);letter-spacing:-.01em}
+    h2{font-size:clamp(1.5rem,3.4vw,2.2rem);text-transform:uppercase;letter-spacing:.1em}
+    p.lead{font-size:1.1rem;max-width:34em}
+    .muted{color:var(--tz-texto-secundario)}
+    .dark .muted{color:var(--tz-marfim)}
+
+    /* botões */
+    .btn{display:inline-block;padding:16px 34px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;border-radius:2px;background:var(--tz-preto);color:var(--tz-marfim);border:1px solid var(--tz-preto);transition:opacity .2s}
+    .btn:hover{opacity:.85}
+    .dark .btn{background:var(--tz-champagne);color:var(--tz-preto);border-color:var(--tz-champagne)}
+    .btn.line{background:transparent;color:var(--tz-preto)}
+    .dark .btn.line{background:transparent;color:var(--tz-marfim);border-color:var(--tz-marfim)}
+
+    /* topo */
+    header{padding:28px 0;border-bottom:1px solid var(--tz-cinza)}
+    header .wrap{display:flex;align-items:center;justify-content:space-between}
+    header img{height:38px;width:auto}
+    header a.link{font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+
+    section{padding:120px 0}
+    .dark{background:var(--tz-preto);color:var(--tz-marfim)}
+    .fio{width:56px;height:1px;background:var(--tz-champagne);margin:0 0 32px;border:0}
+
+    /* hero */
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+    .hero h1{margin-bottom:28px}
+    .hero p.lead{margin-bottom:44px;color:var(--tz-texto-secundario)}
+    .hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+    .hero figure img{width:100%;max-width:440px;margin:0 auto}
+
+    /* usos */
+    .dois{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:64px;border-top:1px solid var(--tz-champagne)}
+    .dois div{padding:40px 40px 0 0}
+    .dois div + div{padding:40px 0 0 40px;border-left:1px solid var(--tz-champagne)}
+    .dois h3{font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:.95rem;margin-bottom:14px;color:var(--tz-champagne)}
+    .dois p{max-width:24em}
+
+    /* pilares */
+    .pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:64px}
+    .pilares h3{font-weight:500;text-transform:uppercase;letter-spacing:.14em;font-size:.95rem;padding-top:22px;border-top:1px solid var(--tz-cinza);margin-bottom:12px}
+
+    /* cta */
+    .cta{text-align:center}
+    .cta .wrap{display:flex;flex-direction:column;align-items:center}
+    .cta h2{margin-bottom:24px}
+    .cta p{margin-bottom:44px;max-width:30em}
+
+    footer{background:var(--tz-preto);color:var(--tz-marfim);padding:56px 0;text-align:center;border-top:1px solid var(--tz-texto-secundario)}
+    footer img{height:44px;margin:0 auto 24px;width:auto}
+    footer small{display:block;font-size:.82rem;color:var(--tz-marfim);letter-spacing:.04em}
+
+    @media(max-width:820px){
+      section{padding:80px 0}
+      .hero .wrap{grid-template-columns:1fr;gap:48px}
+      .hero figure{order:-1}
+      .hero figure img{max-width:300px}
+      .dois,.pilares{grid-template-columns:1fr}
+      .dois div,.dois div + div{padding:32px 0 0;border-left:0}
+      .dois div + div{border-top:1px solid var(--tz-champagne);margin-top:32px}
+      .pilares{gap:36px}
     }
   </style>
 </head>
@@ -60,70 +96,82 @@
 
 <header>
   <div class="wrap">
-    <a href="#" class="logo">TRIZ<span>ZON</span></a>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#cowork">Cowork</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <a href="#"><img src="assets/img/trizzon-logo-mono-sem-fundo.svg" alt="Trizzon Professional"></a>
+    <a class="link" href="#contato">Contato</a>
   </div>
 </header>
 
 <main>
   <section class="hero">
     <div class="wrap">
-      <span class="tag">Novo lançamento</span>
-      <h1>Conheça o <em>Cowork</em>,<br>o novo jeito de trabalhar o cabelo.</h1>
-      <p>A Trizzon nasce para o salão profissional. O Cowork é o nosso primeiro produto, e já está dando o que falar.</p>
-      <div class="actions">
-        <a class="btn" href="#contato">Quero saber mais</a>
-        <a class="btn ghost" href="#cowork">Ver o produto</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="sobre" class="alt">
-    <div class="wrap">
-      <h2>Feito para quem vive o salão</h2>
-      <p class="lead">A Trizzon desenvolve produtos para profissionais de Hair Salon, com foco em resultado, praticidade e rotina de quem atende todo dia.</p>
-      <div class="grid">
-        <div class="card"><div class="ico">💇</div><h3>Pensado para profissionais</h3><p>Produtos criados a partir da realidade do dia a dia do salão.</p></div>
-        <div class="card"><div class="ico">✨</div><h3>Resultado que aparece</h3><p>Qualidade que o profissional sente e o cliente percebe.</p></div>
-        <div class="card"><div class="ico">🚀</div><h3>Marca em crescimento</h3><p>Estamos no início da jornada, e o Cowork é o primeiro passo.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="cowork">
-    <div class="wrap product">
-      <div class="shot">[ Foto do produto Cowork ]</div>
       <div>
-        <span class="tag">Primeiro lançamento</span>
-        <h2>Cowork</h2>
-        <p class="lead" style="margin-bottom:0">O primeiro produto da Trizzon chegou ao mercado e está chamando atenção entre os profissionais.</p>
-        <ul class="list">
-          <li>Desenvolvido para o uso profissional no salão</li>
-          <li>Lançamento oficial da marca Trizzon</li>
-          <li>Em alta: cada vez mais profissionais conhecendo</li>
-        </ul>
-        <a class="btn" href="#contato">Quero o Cowork</a>
+        <p class="eyebrow">Em breve</p>
+        <h1>Tratamento líquido reconstrutor</h1>
+        <p class="lead">Calor, química, rotina: seu cabelo sente tudo. Máscara líquida e leave-in com proteção térmica em um só spray.</p>
+        <div class="actions">
+          <a class="btn" href="#contato">Quero ser avisado</a>
+          <a class="btn line" href="#produto">Conhecer</a>
+        </div>
+      </div>
+      <figure>
+        <img src="assets/img/produto.jpg" alt="Frasco preto fosco com mini gatilho do Tratamento líquido reconstrutor Trizzon Professional" width="1100" height="1375">
+      </figure>
+    </div>
+  </section>
+
+  <section id="produto" class="dark">
+    <div class="wrap">
+      <p class="eyebrow">O produto</p>
+      <h2>Dois usos, um spray</h2>
+      <div class="dois">
+        <div>
+          <h3>Máscara líquida</h3>
+          <p>Depois do shampoo, deixe agir de 3 a 5 minutos e enxágue.</p>
+        </div>
+        <div>
+          <h3>Leave-in</h3>
+          <p>Antes do secador e da prancha, sem enxágue, com proteção térmica.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contato" class="cta alt">
+  <section>
     <div class="wrap">
-      <h2>Vamos conversar?</h2>
-      <p>Fale com a gente e saiba como levar o Cowork para o seu salão.</p>
-      <!-- TROQUE 5500000000000 pelo número com DDI + DDD, ex.: 5511999999999 -->
-      <a class="btn" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Cowork%20da%20Trizzon." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <p class="eyebrow">Fórmula</p>
+      <h2>Reconstrói. Nutre. Protege.</h2>
+      <div class="pilares">
+        <div>
+          <h3>Reconstrói</h3>
+          <p class="muted">Queratina e aminoácidos ajudam a reconstruir a fibra.</p>
+        </div>
+        <div>
+          <h3>Nutre</h3>
+          <p class="muted">Óleo de coco para cabelos danificados por química, calor e rotina.</p>
+        </div>
+        <div>
+          <h3>Protege</h3>
+          <p class="muted">Proteção térmica contra o calor do secador e da prancha.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="dark cta">
+    <div class="wrap">
+      <hr class="fio">
+      <h2>Em breve</h2>
+      <p class="muted">O primeiro lançamento da Trizzon Professional chega aos salões. Fale com a gente para saber quando.</p>
+      <!-- Troque 5500000000000 pelo número com DDI + DDD, ex.: 5511999999999 -->
+      <a class="btn" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20Tratamento%20l%C3%ADquido%20reconstrutor%20da%20Trizzon." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    © 2026 Trizzon. Todos os direitos reservados.
+    <img src="assets/img/trizzon-logo-principal-sem-fundo.svg" alt="Trizzon Professional">
+    <small>© 2026 Trizzon. Todos os direitos reservados.</small>
   </div>
 </footer>
 
