@@ -2,120 +2,122 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trizzon Professional | Tratamento líquido reconstrutor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trizzon Professional</title>
 <meta name="description" content="Tratamento líquido reconstrutor Trizzon Professional. Máscara líquida e leave-in com proteção térmica em um só spray. Em breve.">
 <link rel="icon" type="image/svg+xml" href="assets/img/trizzon-favicon.svg">
-<link rel="preload" as="image" href="assets/img/produto-recorte.png">
+<link rel="preload" as="image" href="assets/seq/giro-0.webp">
 <style>
 @font-face{font-family:"Jost";src:url("assets/fonts/Jost-Variable.ttf") format("truetype");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Archivo Narrow";src:url("assets/fonts/ArchivoNarrow-Variable.ttf") format("truetype");font-weight:400 700;font-display:swap}
-:root{--p:#14110F;--m:#F4EEE6;--c:#C9A876;--g:#8C8378;--t:#625A51;--f:"Jost","Futura","Century Gothic",sans-serif}
+/* Layout: faixas de tela cheia alternando preto e marfim; um frasco 3D por faixa, texto curto no topo, rolagem conduz a rotação. */
+:root{
+  --p:#14110F;--m:#F4EEE6;--c:#C9A876;--g:#8C8378;--t:#625A51;--line:#2b2622;
+  --f:"Jost","Futura","Century Gothic",sans-serif;
+  --nav:48px;--gut:max(20px,env(safe-area-inset-left,0px));--gutr:max(20px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--f);background:var(--m);color:var(--p);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block}
+body{font-family:var(--f);background:var(--m);color:var(--p);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video,canvas{display:block}
 a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--c);outline-offset:4px}
+section{scroll-margin-top:var(--nav)}
 .dk{background:var(--p);color:var(--m)}
+.lt{background:var(--m);color:var(--p)}
+.vh{height:100vh;height:100svh}
 
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;height:48px;z-index:50;background:rgba(20,17,15,.82);backdrop-filter:saturate(1.4) blur(18px);-webkit-backdrop-filter:saturate(1.4) blur(18px)}
-nav .in{max-width:1024px;height:100%;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);background:rgba(20,17,15,.82);backdrop-filter:saturate(1.4) blur(18px);-webkit-backdrop-filter:saturate(1.4) blur(18px)}
+nav .in{max-width:1024px;height:var(--nav);margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr);display:flex;align-items:center;justify-content:space-between;gap:16px}
 nav img{height:19px;width:auto}
-nav ul{display:flex;gap:32px;list-style:none}
-nav ul a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--m);opacity:.78;transition:opacity .2s}
+nav ul{display:flex;gap:clamp(14px,3.4vw,32px);list-style:none}
+nav ul a{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--m);opacity:.78;transition:opacity .2s;white-space:nowrap}
 nav ul a:hover{opacity:1}
 
 /* tipografia */
 .k{font-weight:500;text-transform:uppercase;letter-spacing:.18em;font-size:13px;color:var(--c)}
 .lt .k{color:var(--t)}
-.h1{font-weight:500;font-size:clamp(44px,8vw,112px);line-height:1;letter-spacing:-.035em}
-.h2{font-weight:500;font-size:clamp(40px,5.6vw,80px);line-height:1.02;letter-spacing:-.03em}
-.h3{font-weight:500;font-size:clamp(34px,3.6vw,52px);line-height:1.05;letter-spacing:-.025em}
-.sub{font-size:clamp(19px,1.9vw,26px);line-height:1.3;margin-top:14px;opacity:.86}
-.lnk{display:inline-flex;gap:28px;margin-top:22px;font-size:17px}
-.lnk a{color:var(--c);border-bottom:1px solid transparent;transition:border-color .2s}
-.lt .lnk a{color:var(--p)}
+.h1{font-weight:500;font-size:clamp(40px,min(8vw,13vh),112px);line-height:1;letter-spacing:-.035em;text-wrap:balance}
+.h2{font-weight:500;font-size:clamp(36px,min(5.6vw,10vh),80px);line-height:1.04;letter-spacing:-.03em;text-wrap:balance}
+.h3{font-weight:500;font-size:clamp(32px,3.6vw,52px);line-height:1.05;letter-spacing:-.025em}
+.sub{font-size:clamp(18px,1.9vw,26px);line-height:1.3;opacity:.86;text-wrap:balance}
+.txt{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding-left:var(--gut);padding-right:var(--gutr)}
+.lnk{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;font-size:17px;margin-top:6px}
+.lnk a{color:var(--p);border-bottom:1px solid transparent;transition:border-color .2s}
 .lnk a:hover{border-color:currentColor}
-
-/* 1 · hero com rolagem presa */
-#hero{height:260vh;position:relative}
-#hero .st{position:sticky;top:0;height:100vh;overflow:hidden}
-#hero .tt{position:absolute;top:calc(48px + 9vh);left:0;right:0;text-align:center;z-index:3;padding:0 20px}
-#hero .tt .h1{margin-top:18px}
-#hero .bw{position:absolute;left:50%;top:34vh;height:80vh;transform:translateX(-50%);z-index:2}
-#hero .bw .in{height:100%;opacity:0;transform:translateY(40vh);transition:transform 1.8s cubic-bezier(.16,1,.3,1),opacity 1.4s ease}
-.ready #hero .bw .in{opacity:1;transform:none}
-#hero .bw img{height:100%;width:auto;transform-origin:50% 46%;will-change:transform}
-#hero .tt>*{opacity:0;transform:translateY(24px);transition:all 1.2s cubic-bezier(.16,1,.3,1) .5s}
-.ready #hero .tt>*{opacity:1;transform:none}
-.ready #hero .tt .h1{transition-delay:.65s}
-#hero .end{position:absolute;top:50%;left:52%;right:6vw;z-index:4;opacity:0;margin-top:-1em}
-#hero .end .sub{max-width:20em}
-@media(max-width:760px){#hero .end{top:auto;bottom:8vh;left:20px;right:20px;margin:0;text-align:center}#hero .end .sub{margin-left:auto;margin-right:auto}}
-canvas.mist{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
-
-/* 2 · tile produto */
-.tile{position:relative;overflow:hidden;text-align:center}
-#produto{padding:110px 20px 0;height:min(100vh,920px);min-height:720px}
-#produto .bw{position:absolute;left:50%;bottom:-26%;height:68%;transform:translateX(-50%)}
-#produto .bw img{height:100%;width:auto;animation:float 7s ease-in-out infinite;transform-origin:50% 100%}
-@keyframes float{50%{translate:0 -14px}}
-
-/* 3 · grade de dois usos */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
-.grid .tile{height:min(78vh,700px);min-height:560px;padding:64px 28px 0}
-.grid .lt{border:1px solid var(--g)}
-.grid .bw{position:absolute;left:50%;bottom:-20%;height:66%;transform:translateX(-50%)}
-.grid .bw img{height:100%;width:auto}
-.grid .num{position:absolute;left:0;right:0;bottom:6%;font-weight:500;font-size:clamp(120px,17vw,250px);letter-spacing:-.06em;line-height:1;color:var(--g)}
-.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s ease,transform 1.3s cubic-bezier(.16,1,.3,1)}
+.reveal{opacity:.3;transform:translateY(22px);transition:opacity .9s ease,transform 1.1s cubic-bezier(.16,1,.3,1)}
 .reveal.on{opacity:1;transform:none}
 
-/* 4 · fórmula, palavras na horizontal */
-#formula{height:340vh;position:relative}
-#formula .st{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center}
-#formula .track{display:flex;gap:9vw;white-space:nowrap;font-weight:500;font-size:clamp(110px,21vw,330px);letter-spacing:-.05em;line-height:1;will-change:transform;padding-left:55vw}
-#formula .bw{position:absolute;left:50%;top:50%;height:66vh;transform:translate(-50%,-46%);z-index:2}
-#formula .bw img{height:100%;width:auto;will-change:transform}
-#formula .cap{position:absolute;bottom:8vh;left:0;right:0;text-align:center;z-index:3}
-#formula .cap .k{display:inline-block;transition:opacity .4s}
-#formula .k0{position:absolute;top:calc(48px + 6vh);left:0;right:0;text-align:center;z-index:3}
+/* 1 · hero: sequência 3D presa à rolagem */
+#hero{height:320vh;position:relative}
+.st{position:sticky;top:0;overflow:hidden}
+#hero .tt{position:absolute;top:calc(var(--nav) + 6vh);left:0;right:0;z-index:3;will-change:transform,opacity}
+.stage{position:absolute;left:50%;bottom:5vh;height:60vh;aspect-ratio:420/1120;margin-left:calc(60vh*-0.1875);transform-origin:50% 100%;will-change:transform;z-index:2}
+.stage canvas{width:100%;height:100%}
+#hero .stage{opacity:0;transition:opacity .7s ease}
+.ready #hero .stage{opacity:1}
+#hero .end{position:absolute;z-index:4;opacity:0;left:54%;right:var(--gutr);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px}
+#hero .end .sub{max-width:20em}
+@media(max-width:760px){
+  #hero .end{left:0;right:0;top:auto;bottom:5vh;transform:none;align-items:center;text-align:center;padding-left:var(--gut);padding-right:var(--gutr)}
+}
+
+/* 2 · produto */
+.band{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-block:clamp(84px,11vh,120px) clamp(44px,7vh,76px);gap:clamp(24px,4.5vh,48px)}
+.shot{position:relative;height:clamp(340px,50vh,600px);aspect-ratio:660/1200;max-width:100%}
+.shot img{width:100%;height:100%;object-fit:contain}
+
+/* 3 · dois usos, com vídeo em loop */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px max(12px,env(safe-area-inset-right,0px)) 12px max(12px,env(safe-area-inset-left,0px))}
+.tile{position:relative;overflow:hidden;height:min(82vh,760px);min-height:540px}
+.tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile.lt{outline:1px solid var(--g);outline-offset:-1px}
+.tile .txt{position:relative;z-index:4;padding-top:clamp(40px,7vh,64px);gap:10px}
+#mascV{object-position:50% 30%}
+#leaveV{object-position:50% 100%;transform:scale(.86);transform-origin:50% 100%}
+@media(max-width:760px){
+  .grid{grid-template-columns:1fr}
+  .tile{height:auto;min-height:0;display:flex;flex-direction:column}
+  .tile .txt{padding-top:44px;padding-bottom:26px}
+  .tile video{position:relative;inset:auto;height:auto;aspect-ratio:1080/1000;order:2}
+  #mascV{object-position:50% 45%}
+  #leaveV{object-position:50% 62%;transform:none}
+}
+
+/* 4 · fórmula */
+#formula{height:300vh;position:relative}
+#formula .st{display:flex;align-items:center}
+#formula .track{display:flex;gap:max(9vw,48px);white-space:nowrap;font-weight:500;font-size:clamp(72px,19vw,300px);letter-spacing:-.05em;line-height:1;will-change:transform;transform:translateX(100vw)}
+#formula .stage{bottom:auto;top:50%;height:62vh;margin-left:calc(62vh*-0.1875);margin-top:-29vh;transform-origin:50% 50%}
+#formula .k0{position:absolute;top:calc(var(--nav) + 5vh);left:0;right:0;text-align:center;z-index:3}
+#formula .cap{position:absolute;bottom:6vh;left:0;right:0;text-align:center;z-index:3}
+#formula .cap .k{display:inline-block;transition:opacity .3s}
 
 /* 5 · fio a fio */
-#fio{height:260vh;position:relative}
-#fio .st{position:sticky;top:0;height:100vh;overflow:hidden}
+#fio{height:240vh;position:relative}
 #fio canvas{position:absolute;inset:0;width:100%;height:100%}
-#fio .tt{position:absolute;top:calc(48px + 8vh);left:0;right:0;text-align:center;z-index:2;padding:0 20px}
-#fio .tt2{position:absolute;bottom:9vh;left:0;right:0;text-align:center;z-index:2;opacity:0}
+#fio .tt{position:absolute;top:calc(var(--nav) + 7vh);left:0;right:0;z-index:2}
+#fio .tt2{position:absolute;bottom:9vh;left:0;right:0;z-index:2;opacity:0}
 
-/* 6 · fim */
-#breve{height:100vh;min-height:680px;padding-top:16vh}
-#breve .bw{position:absolute;left:50%;bottom:-30%;height:70%;transform:translateX(-50%)}
-#breve .bw img{height:100%;width:auto}
-footer{background:var(--p);color:var(--m);border-top:1px solid #2b2622;padding:32px 22px;font-size:12px;letter-spacing:.06em}
-footer .in{max-width:1024px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;opacity:.7}
+footer{background:var(--p);color:var(--m);border-top:1px solid var(--line);font-size:12px;letter-spacing:.06em}
+footer .in{max-width:1024px;margin:0 auto;padding:28px var(--gutr) calc(28px + env(safe-area-inset-bottom,0px)) var(--gut);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 20px}
 footer img{height:22px;width:auto}
+footer span{opacity:.7}
 
-@media(max-width:760px){
-  nav ul{gap:18px}nav ul li:nth-child(n+3){display:none}
-  #hero .bw{height:64vh;top:40vh}
-  .grid{grid-template-columns:1fr}
-  #produto{min-height:640px}
-  #formula .bw{height:52vh}
-}
 @media(prefers-reduced-motion:reduce){
-  #hero .bw .in,#hero .tt>*{transition:none;opacity:1;transform:none}
-  #produto .bw img{animation:none}
+  html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
+  #hero .stage{opacity:1;transition:none}
 }
 </style>
+
 </head>
 <body>
 
 <nav>
   <div class="in">
-    <a href="#hero" aria-label="Trizzon Professional"><img src="assets/img/trizzon-logo-principal-sem-fundo.svg" alt="Trizzon Professional"></a>
+    <a href="#hero" aria-label="Trizzon Professional, início"><img src="assets/img/trizzon-logo-principal-sem-fundo.svg" alt="Trizzon Professional" width="74" height="19"></a>
     <ul>
       <li><a href="#produto">Produto</a></li>
       <li><a href="#usos">Uso</a></li>
@@ -128,74 +130,80 @@ footer img{height:22px;width:auto}
 <main>
   <!-- 1 -->
   <section id="hero" class="dk">
-    <div class="st">
-      <div class="tt" id="heroT">
+    <div class="st vh">
+      <div class="tt txt" id="heroT">
         <p class="k">Trizzon Professional</p>
         <h1 class="h1">Seu cabelo sente tudo.</h1>
       </div>
-      <div class="bw"><div class="in"><img id="heroB" src="assets/img/produto-recorte.png" alt="Frasco preto fosco do Tratamento líquido reconstrutor com mini gatilho" width="357" height="1112"></div></div>
-      <canvas class="mist" id="heroMist"></canvas>
+      <div class="stage" id="heroS"><canvas id="heroC" width="420" height="1120" role="img" aria-label="Frasco preto acetinado do Tratamento líquido reconstrutor com mini gatilho, de frente, com o rótulo à mostra"></canvas></div>
       <div class="end" id="heroE"><p class="h2">Um spray.<br>Dois tratamentos.</p><p class="sub">Máscara líquida e leave-in com proteção térmica.</p></div>
     </div>
   </section>
 
   <!-- 2 -->
-  <section id="produto" class="tile lt">
-    <p class="k reveal">Em breve</p>
-    <h2 class="h2 reveal" style="margin-top:14px">Tratamento líquido<br>reconstrutor.</h2>
-    <p class="sub reveal">Máscara líquida e leave-in com proteção térmica.</p>
-    <div class="lnk reveal"><a href="#usos">Como usar ›</a><a href="#breve">Lançamento ›</a></div>
-    <div class="bw" id="tiltB"><img src="assets/img/produto-recorte.png" alt="" width="357" height="1112"></div>
+  <section id="produto" class="band lt">
+    <div class="txt">
+      <p class="k reveal">Em breve</p>
+      <h2 class="h2 reveal">Tratamento líquido<br>reconstrutor.</h2>
+      <p class="sub reveal">Máscara líquida e leave-in com proteção térmica.</p>
+      <div class="lnk reveal"><a href="#usos">Como usar ›</a><a href="#breve">Lançamento ›</a></div>
+    </div>
+    <div class="shot reveal"><img src="assets/img/frasco-claro.webp" alt="Frasco do Tratamento líquido reconstrutor 260 ml visto de frente" width="660" height="1200" loading="lazy" decoding="async"></div>
   </section>
 
   <!-- 3 -->
-  <section id="usos" class="grid">
+  <section id="usos" class="grid lt">
     <div class="tile dk">
-      <h3 class="h3 reveal">Máscara líquida.</h3>
-      <p class="sub reveal">Depois do shampoo. Agir e enxaguar.</p>
-      <div class="num" aria-hidden="true">3–5′</div>
-      <div class="bw reveal"><img src="assets/img/produto-recorte.png" alt="" width="357" height="1112"></div>
+      <video id="mascV" muted loop playsinline preload="metadata" poster="assets/video/rotulo.jpg" aria-label="Luz percorrendo o rótulo do frasco"><source src="assets/video/rotulo.mp4" type="video/mp4"></video>
+      <div class="txt">
+        <p class="k reveal">3 a 5 minutos</p>
+        <h3 class="h3 reveal">Máscara líquida.</h3>
+        <p class="sub reveal">Depois do shampoo. Agir e enxaguar.</p>
+      </div>
     </div>
     <div class="tile lt" id="leaveT">
-      <h3 class="h3 reveal">Leave-in.</h3>
-      <p class="sub reveal">Antes do secador. Sem enxágue.</p>
-      <div class="bw reveal"><img id="leaveB" src="assets/img/produto-recorte.png" alt="" width="357" height="1112"></div>
-      <canvas class="mist" id="leaveMist"></canvas>
+      <video id="leaveV" muted loop playsinline preload="metadata" poster="assets/video/gatilho.jpg" aria-label="Mini gatilho do frasco em perfil"><source src="assets/video/gatilho.mp4" type="video/mp4"></video>
+      <div class="txt">
+        <p class="k reveal">Sem enxágue</p>
+        <h3 class="h3 reveal">Leave-in.</h3>
+        <p class="sub reveal">Antes do secador.</p>
+      </div>
     </div>
   </section>
 
   <!-- 4 -->
   <section id="formula" class="dk">
-    <div class="st">
+    <div class="st vh">
       <p class="k k0">A fórmula</p>
       <div class="track" id="track" aria-label="Reconstrói. Nutre. Protege."><span>Reconstrói.</span><span>Nutre.</span><span>Protege.</span></div>
-      <div class="bw"><img id="formB" src="assets/img/produto-recorte.png" alt="" width="357" height="1112"></div>
+      <div class="stage" id="formS"><canvas id="formC" width="420" height="1120" aria-hidden="true"></canvas></div>
       <div class="cap"><span class="k" id="ativo">Queratina e aminoácidos</span></div>
     </div>
   </section>
 
   <!-- 5 -->
   <section id="fio" class="lt">
-    <div class="st">
-      <canvas id="hair"></canvas>
-      <div class="tt"><h2 class="h1">Fio a fio.</h2></div>
-      <div class="tt2" id="fioE"><p class="sub" style="opacity:1">Do lavatório à escova.</p></div>
+    <div class="st vh">
+      <canvas id="hair" aria-hidden="true"></canvas>
+      <div class="tt txt"><h2 class="h1">Fio a fio.</h2></div>
+      <div class="tt2 txt" id="fioE"><p class="sub" style="opacity:1">Do lavatório à escova.</p></div>
     </div>
   </section>
 
   <!-- 6 -->
-  <section id="breve" class="tile dk">
-    <p class="k reveal">Primeiro lançamento</p>
-    <h2 class="h1 reveal" style="margin-top:18px">Em breve.</h2>
-    <p class="sub reveal">Nos salões.</p>
-    <div class="bw reveal"><img id="breveB" src="assets/img/produto-recorte.png" alt="" width="357" height="1112"></div>
-    <canvas class="mist" id="breveMist"></canvas>
+  <section id="breve" class="band dk">
+    <div class="txt">
+      <p class="k reveal">Primeiro lançamento</p>
+      <h2 class="h1 reveal">Em breve.</h2>
+      <p class="sub reveal">Nos salões.</p>
+    </div>
+    <div class="shot reveal"><img id="breveB" src="assets/img/frasco-escuro.webp" alt="Frasco do Tratamento líquido reconstrutor sobre fundo preto" width="660" height="1200" loading="lazy" decoding="async"></div>
   </section>
 </main>
 
 <footer>
   <div class="in">
-    <img src="assets/img/trizzon-logo-principal-sem-fundo.svg" alt="Trizzon Professional">
+    <img src="assets/img/trizzon-logo-principal-sem-fundo.svg" alt="Trizzon Professional" width="86" height="22">
     <span>© 2026 Trizzon. Todos os direitos reservados.</span>
   </div>
 </footer>
@@ -207,93 +215,91 @@ const $=s=>document.querySelector(s);
 const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
 const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
 const seg=(p,a,b)=>clamp((p-a)/(b-a));
-const prog=el=>{const r=el.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight))};
-const NOZ={x:14/357,y:38/1112};
+const prog=el=>{const r=el.getBoundingClientRect();return clamp(-r.top/Math.max(1,r.height-innerHeight))};
 
-addEventListener('load',()=>requestAnimationFrame(()=>document.body.classList.add('ready')));
-setTimeout(()=>document.body.classList.add('ready'),1200);
+/* ---------- sequência 3D: 90 quadros, giro completo de 360° (quadro 0 = frente) ---------- */
+const N=90,TURN=15;                    /* hero: da frente (0) até três quartos (15 = 60°) */
+const PER=10,FW=420,FH=1120,NS=N/PER;  /* 9 folhas com 10 quadros lado a lado */
+const sheets=new Array(NS);
+function load(k){return new Promise(res=>{const im=new Image();im.decoding='async';im.onload=()=>{sheets[k]=im;res()};im.onerror=()=>res();im.src='assets/seq/giro-'+k+'.webp'})}
+const has=i=>!!sheets[Math.floor(i/PER)];
+function near(i){for(let d=0;d<N;d++){const a=(i+d)%N,b=(i-d+N)%N;if(has(a))return a;if(has(b))return b}return -1}
+function blit(ctx,cv,i){ctx.drawImage(sheets[Math.floor(i/PER)],(i%PER)*FW,0,FW,FH,0,0,cv.width,cv.height)}
+function draw(cv,f){
+  f=((f%N)+N)%N;const ctx=cv.getContext('2d'),i=Math.floor(f),t=f-i,a=near(i),b=(i+1)%N;if(a<0)return;
+  ctx.clearRect(0,0,cv.width,cv.height);ctx.globalAlpha=1;blit(ctx,cv,a);
+  if(t>.03&&a===i&&has(b)){ctx.globalAlpha=t;blit(ctx,cv,b);ctx.globalAlpha=1}
+}
+const heroC=$('#heroC'),formC=$('#formC'),heroS=$('#heroS'),formS=$('#formS');
+let heroF=0,formF=0,heroShown=-1,formShown=-1;
+const intro=false;
+load(0).then(()=>{draw(heroC,0);draw(formC,0);document.body.classList.add('ready');
+  let k=1;const next=()=>{heroShown=formShown=-1;req();if(k<NS)load(k++).then(next)};next()});
+setTimeout(()=>document.body.classList.add('ready'),1500);
 
-/* entradas suaves */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.2});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.12+'s';io.observe(el)});
+/* ---------- vídeos: tocam só quando visíveis ---------- */
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting&&!RM){const p=v.play();if(p&&p.catch)p.catch(()=>{})}else v.pause()}),{threshold:.2});
+document.querySelectorAll('video').forEach(v=>vio.observe(v));
 
-/* névoa: partículas que saem do bico */
-function Mist(cv,img,colors,host){
-  const ctx=cv.getContext('2d');let W=0,H=0,ps=[],vis=false,run=false,last=0,burst=0;
-  const size=()=>{const r=cv.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0)};
-  size();addEventListener('resize',size);
-  const o={enabled:true,puff(){burst=26}};
-  function origin(){const c=cv.getBoundingClientRect(),r=img.getBoundingClientRect();return{x:r.left-c.left+r.width*NOZ.x,y:r.top-c.top+r.height*NOZ.y,s:r.height/800}}
-  function emit(n){const g=origin();for(let i=0;i<n;i++){const a=Math.PI+(Math.random()-.5)*.5+.06,v=(2+Math.random()*5)*Math.max(.6,g.s);
-    ps.push({x:g.x,y:g.y,vx:Math.cos(a)*v,vy:Math.sin(a)*v,l:0,m:70+Math.random()*90,r:Math.random()*1.6+.4,c:colors[(Math.random()*colors.length)|0]})}}
-  function frame(t){
-    if(!vis){run=false;return}
-    ctx.clearRect(0,0,W,H);
-    if(o.enabled&&t-last>3200){last=t;o.puff()}
-    if(burst>0){emit(22);burst--}
-    ps=ps.filter(p=>p.l<p.m);
-    for(const p of ps){p.l++;p.x+=p.vx;p.y+=p.vy;p.vx*=.965;p.vy=p.vy*.965+.012+(Math.random()-.5)*.05;
-      const k=p.l/p.m,a=(k<.08?k/.08:1-k)*.9;ctx.globalAlpha=a;ctx.fillStyle=p.c;ctx.fillRect(p.x,p.y,p.r,p.r)}
-    ctx.globalAlpha=1;requestAnimationFrame(frame)}
-  new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis&&!run&&!RM){run=true;last=performance.now()-2400;requestAnimationFrame(frame)}}).observe(host||cv);
-  return o}
+/* ---------- entradas ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.1+'s';io.observe(el)});
 
-const heroMist=Mist($('#heroMist'),$('#heroB'),['#C9A876','#F4EEE6','#C9A876'],$('#hero'));
-Mist($('#leaveMist'),$('#leaveB'),['#14110F','#8C8378','#625A51'],$('#leaveT'));
-Mist($('#breveMist'),$('#breveB'),['#C9A876','#F4EEE6'],$('#breve'));
-
-/* fios: de desalinhados a alinhados conforme a rolagem */
-const hc=$('#hair'),hx=hc.getContext('2d');let HW,HH,hv=false,hp=0;const N=84,S=[];
-for(let i=0;i<N;i++)S.push({f1:.004+Math.random()*.01,f2:.02+Math.random()*.04,p1:Math.random()*9,p2:Math.random()*9,a:.5+Math.random(),k:Math.random()<.18});
+/* ---------- fios ---------- */
+const hc=$('#hair'),hx=hc.getContext('2d');let HW=0,HH=0,hv=false,hp=0;const HN=84,S=[];
+for(let i=0;i<HN;i++)S.push({f1:.004+Math.random()*.01,f2:.02+Math.random()*.04,p1:Math.random()*9,p2:Math.random()*9,a:.5+Math.random(),k:Math.random()<.18});
 function hsize(){const r=hc.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);HW=r.width;HH=r.height;hc.width=HW*d;hc.height=HH*d;hx.setTransform(d,0,0,d,0,0)}
-hsize();addEventListener('resize',hsize);
+hsize();addEventListener('resize',()=>{hsize();hair(performance.now());req()});
 function hair(t){
-  hx.clearRect(0,0,HW,HH);const m=1-ease(hp),y0=HH*.34,span=HH*.36;
-  for(let i=0;i<N;i++){const s=S[i],base=y0+span*(i/(N-1));
+  hx.clearRect(0,0,HW,HH);const m=1-ease(hp),y0=HH*.44,span=HH*.28,amp=Math.min(1,HH/900);
+  for(let i=0;i<HN;i++){const s=S[i],base=y0+span*(i/(HN-1));
     hx.beginPath();hx.lineWidth=1;hx.strokeStyle=s.k?'#C9A876':(i%3?'#8C8378':'#14110F');
     for(let x=-10;x<=HW+10;x+=10){
-      const fr=Math.sin(x*s.f1+s.p1+t*.0004)*60*s.a+Math.sin(x*s.f2+s.p2)*22*s.a*(.4+x/HW);
+      const fr=(Math.sin(x*s.f1+s.p1+t*.0004)*52*s.a+Math.sin(x*s.f2+s.p2)*20*s.a*(.4+x/HW))*amp;
       const y=base+fr*m+Math.sin(x*.004+t*.0007+i*.15)*3;
       x<0?hx.moveTo(x,y):hx.lineTo(x,y)}
     hx.stroke()}
   if(hv&&!RM)requestAnimationFrame(hair)}
-new IntersectionObserver(es=>{hv=es[0].isIntersecting;if(hv)requestAnimationFrame(hair)}).observe($('#fio'));
+new IntersectionObserver(es=>{const was=hv;hv=es[0].isIntersecting;if(hv&&!was)requestAnimationFrame(hair)}).observe($('#fio'));
 
-/* inclinação com o mouse no tile do produto */
-const tilt=$('#tiltB img');let tx=0,ty=0;
-$('#produto').addEventListener('pointermove',e=>{const r=e.currentTarget.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5);ty=((e.clientY-r.top)/r.height-.5)});
-$('#produto').addEventListener('pointerleave',()=>{tx=ty=0});
-let ctx_=0;
-
-/* tudo o que depende da rolagem */
-const hb=$('#heroB'),ht=$('#heroT'),he=$('#heroE'),track=$('#track'),fb=$('#formB'),ativo=$('#ativo'),fe=$('#fioE');
-const ATV=['Queratina e aminoácidos','Óleo de coco','Proteção térmica'];let ai=0;
+/* ---------- tudo o que depende da rolagem ---------- */
+const hero=$('#hero'),formula=$('#formula'),fio=$('#fio'),ht=$('#heroT'),he=$('#heroE'),track=$('#track'),ativo=$('#ativo'),fe=$('#fioE');
+const ATV=['Queratina e aminoácidos','Óleo de coco','Proteção térmica'];let ai=0,queued=false,idle=0;
+function req(){if(!queued){queued=true;requestAnimationFrame(tick)}}
 function tick(){
-  /* hero: o frasco cresce até o rótulo */
-  const p=prog($('#hero')),z=ease(seg(p,.05,.85));
-  const wide=innerWidth>760;
-  hb.style.transform=wide?`translate(${-z*18}vw,${-z*22}vh) scale(${1+z*.12})`:`translateY(${-z*26}vh) scale(${1-z*.1})`;
-  ht.style.opacity=1-seg(p,0,.3);ht.style.transform=`translateY(${-seg(p,0,.4)*80}px)`;
-  he.style.opacity=seg(p,.68,.9);he.style.transform=`translateY(${(1-seg(p,.68,.9))*30}px)`;
-  heroMist.enabled=p<.12;
+  queued=false;
+  const wide=innerWidth>760,vh=innerHeight;
 
-  /* fórmula: as palavras passam atrás do frasco */
-  const f=prog($('#formula'));
-  const tw=track.scrollWidth-innerWidth*.45;
-  track.style.transform=`translateX(${-f*tw}px)`;
-  fb.style.transform=`rotate(${(f-.5)*10}deg) translateY(${Math.sin(f*Math.PI)*-3}vh)`;
-  const n=Math.min(2,Math.floor(seg(f,.12,.88)*3));
-  if(n!==ai){ai=n;ativo.style.opacity=0;setTimeout(()=>{ativo.textContent=ATV[n];ativo.style.opacity=1},220)}
+  /* hero */
+  const p=prog(hero),z1=ease(seg(p,.06,.66)),z2=ease(seg(p,.6,.9));
+  if(!intro){heroF=TURN*z1;if(Math.abs(heroF-heroShown)>.01){draw(heroC,heroF);heroShown=heroF}}
+  heroS.style.transform=wide?`translateX(${-z2*20}vw) scale(${1+z1*.2})`:`translateY(${-z2*.2*vh}px) scale(${1+z1*.08-z2*.34})`;
+  ht.style.opacity=1-seg(p,0,.2);ht.style.transform=`translateY(${-seg(p,0,.3)*60}px)`;
+  const eo=seg(p,.72,.92);he.style.opacity=eo;he.style.transform=(wide?'translateY(-50%) ':'')+`translateY(${(1-eo)*24}px)`;
+
+  /* fórmula */
+  const f=prog(formula);
+  const tw=track.scrollWidth;
+  track.style.transform=`translateX(${innerWidth-f*(tw+innerWidth)}px)`;
+  formF=N*ease(seg(f,.06,.94));
+  if(Math.abs(formF-formShown)>.01){draw(formC,formF);formShown=formF}
+  const n=Math.min(2,Math.floor(seg(f,.1,.9)*3));
+  if(n!==ai){ai=n;ativo.style.opacity=0;setTimeout(()=>{ativo.textContent=ATV[ai];ativo.style.opacity=1},200)}
 
   /* fios */
-  hp=seg(prog($('#fio')),.05,.75);fe.style.opacity=seg(prog($('#fio')),.7,.9);
-  if(!hv||RM)hair(performance.now());
-
-  /* tile do produto */
-  ctx_+= (tx-ctx_)*.08;
-  tilt.style.transform=`rotate(${ctx_*6}deg) translateX(${ctx_*20}px)`;
-  requestAnimationFrame(tick)}
-requestAnimationFrame(tick);
+  const q=prog(fio);hp=seg(q,.05,.75);fe.style.opacity=seg(q,.7,.9);
+  if(!hv||RM)hair(0);
+}
+/* ao parar de rolar, assenta no quadro inteiro mais próximo (imagem nítida) */
+function settle(){
+  if(intro)return;
+  const a=Math.round(heroF),b=Math.round(formF);
+  if(Math.abs(heroF-a)>.01){heroF=a;draw(heroC,a);heroShown=a}
+  if(Math.abs(formF-b)>.01){formF=b;draw(formC,b);formShown=b}
+}
+addEventListener('scroll',()=>{req();clearTimeout(idle);idle=setTimeout(settle,160)},{passive:true});
+addEventListener('resize',req);
+req();
 })();
 </script>
 </body>
